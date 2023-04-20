@@ -1,0 +1,239 @@
+<!Doctype html>
+<html lang="en">
+ <head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width,initial-scale=1">
+ <meta name= "Author" content="Martay Williams">
+
+<!-- not sure if this is necesary or not
+<link rel="stylesheet" href="index.css">
+ <script defer src="login-page.js"></script>
+-->
+
+     <!--Load the static variable that refers to the images folder-->
+     {% load static %}
+ 
+ <title> Katz Home Page </title>
+ </head>
+ <style>
+    body {
+  background-color:#d9b99b;
+}
+
+.header {
+  width:70%;
+  overflow: hidden;
+  background-color: #fff0db;
+  padding: 20px 10px;
+ margin-right: auto;
+	margin-left: auto;
+	border-radius: 50px;
+  box-shadow: 0px 5px 20px #4A2511;
+}
+
+.header a {
+  float: left;
+  color: #65350f;
+  font-weight: bold;
+  text-align: center;
+  font-family: georgia;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 22px;
+  line-height: 25px;
+  border-radius: 4px;
+ margin-right: 25px;
+}
+
+.header a.logo {
+  box-shadow: -5px 1px 20px #e5e6e8;
+}
+
+.header a:hover {
+  background-color: #65350F;
+  color: #FFFFFF;
+}
+
+.header a.logout {
+  background-color: #EE4B2B;
+  color: white;
+}
+
+.header a.logout:hover {
+  background-color: #8b0000;
+}
+
+.header-right {
+  float: right;
+}
+.userinfo {
+width:10%;
+  float: left;
+  border-style: inset;
+   border-radius: 20px;
+   text-align: center;
+	font-family: georgia;
+    background-color:#652A0E;
+     color: #FFFFFF;
+      box-shadow: 0px 5px 10px #4A2511;
+}
+
+                        .roleinfo {
+                        width:12%;
+                          float: right;
+                          border-style: inset;
+                           border-radius: 20px;
+                           text-align: center;
+                            font-family: georgia;
+                            background-color:#652A0E;
+                             color: #FFFFFF;
+                              box-shadow: 0px 5px 10px #4A2511;
+                                                            }
+.promo{
+width:50%;
+text-align: center;
+	font-family: georgia;
+	border-style: inset;
+   border-radius: 20px;
+   text-align: center;
+	font-family: georgia;
+    background-color:#652A0E;
+     color: #FFFFFF;
+      box-shadow: 0px 5px 10px #4A2511;
+        margin-right:auto;
+            margin-left:auto;
+}
+
+.cat1 {
+background-color: #fff0db;
+  float: right;
+    box-shadow: -5px 5px 20px #4A2511;
+    border-radius: 50px;
+}
+
+.cat1B {
+
+  float: right;
+
+}
+
+        .cat2 {
+        width:85%;
+        background-color: #fff0db;
+        padding-top:20px;
+         padding-left:10px;
+          display:block;
+          margin-right:auto;
+          margin-left:auto;
+           box-shadow: 5px 10px 20px #4A2511;
+           border-radius: 50px;
+
+
+        }
+        .cat2B {
+
+
+        padding-bottom:100px;
+         padding-left:10px;
+         float:left;
+
+
+        }
+
+            .cat3 {
+            display: block;
+          background-color: #fff0db;
+        padding-top:20px;
+          float: left;
+           box-shadow: 5px 10px 20px #4A2511;
+           border-radius: 50px;
+            }
+
+.catimage:hover {
+  animation: shake 0.5s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+
+ </style>
+ <body>
+ {% if user.role == 'breeder' %}
+
+ <div class="userinfo">
+     <h3>USER: {{request.user.username}}</h3>
+ </div>
+             <div class="roleinfo">
+                 <h3>ROLE: {{request.user.role}}</h3>
+             </div>
+ <!--<br><br><br><br>--> <div class="header">
+     &nbsp;&nbsp;&nbsp; <img src="{% static 'KATZ_LOGO_TEST.png' %}" class="logo" alt="KATZ" width="200">
+     <div class="header-right">
+         <a href="{% url 'query_test' %}">Finance Report</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+         <a href="{% url 'kittens' %}">Available Cats</a>
+         <a href="{% url 'cat_register' %}">Register New Cat</a>
+         <strong><a class="logout" href="{% url 'logout' %}">Logout</a></strong>
+     </div>
+ </div><br><br>
+<div class="promo">
+    <h1>Welcome to the BEST Cat Breeder Website!</h1>
+</div><br><br><br><br>
+
+ <div class="cat2">
+     <a href="{% url 'kittens' %}"> <img src="{% static 'homeCat1.png' %}" class="catimage" alt="cat2" height ="400"></a>
+
+     <a href="{% url 'kittens' %}"><img src="{% static 'homeCat2.png' %}" class="catimage" alt="cat2" height ="400"></a>
+
+     <a href="{% url 'kittens' %}"><img src="{% static 'homeCat4.png' %}" class="catimage" alt="cat3" height = "400"></a>
+
+
+ </div>
+ <!--<div class="cat2B">
+ <img src="{% static 'homeCat2.png' %}" class="catimage" alt="cat2">
+ </div>
+ <div class="cat1B">
+     <img src="{% static 'homeCat1.png' %}" class="catimage" alt="cat1" width="425" height ="425">
+ </div>-->
+
+
+ {% else %}
+ <div class="userinfo">
+     <h3>USER: {{request.user.username}}</h3>
+ </div>
+ <div class="roleinfo">
+     <h3>ROLE: {{request.user.role}}</h3>
+ </div>
+ <!--<br><br><br><br>--> <div class="header">
+     &nbsp;&nbsp;&nbsp; <img src="{% static 'KATZ_LOGO_TEST.png' %}" class="logo" alt="KATZ" width="200">
+     <div class="header-right">
+         <a href="{% url 'about' %}">About Us</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+         <a href="{% url 'kittens' %}">Available Cats</a>
+         <strong><a class="logout" href="{% url 'logout' %}">Logout</a></strong>
+     </div>
+ </div><br><br>
+ <div class="promo">
+     <h1>Welcome to the BEST Cat Breeder Website!</h1>
+ </div><br><br><br><br>
+ <div class="cat2">
+     <a href="{% url 'kittens' %}"> <img src="{% static 'homeCat1.png' %}" class="catimage" alt="cat2" height ="400"></a>
+
+     <a href="{% url 'kittens' %}"><img src="{% static 'homeCat2.png' %}" class="catimage" alt="cat2" height ="400"></a>
+
+     <a href="{% url 'kittens' %}"><img src="{% static 'homeCat4.png' %}" class="catimage" alt="cat3" height = "400"></a>
+ </div>
+ {% endif %}
+ </body>
+ </html>

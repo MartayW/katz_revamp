@@ -1,0 +1,162 @@
+<!Doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name= "Author" content="Martay Williams">
+    <link rel="stylesheet" href="kittens.css">
+
+
+    <!--Load the static variable that refers to the images folder-->
+    {% load static %}
+
+
+
+    <title> View Cats </title>
+</head>
+<style>
+    body {
+  background-color:#3792cb;
+}
+.banner {
+background-color:#3792cb;
+padding-top:15px;
+	padding-bottom:15px;
+	border-radius: 20px;
+
+}
+
+th {
+	font-family: georgia;
+	font-size:23px;
+	padding-top: 10px;
+	padding-bottom: 20px;
+	padding-left: 50px;
+	padding-right: 50px;
+	background-color: #d8f9ff;
+	width: 7%;
+	margin-right: auto;
+	margin-left: auto;
+	border: 1px solid #ccc;
+  border-radius: 15px;
+  box-sizing: border-box;
+  letter-spacing: 3px;
+}
+
+
+h1 {
+	vertical-align: middle;
+	width: 50%;
+	text-align: center;
+	font-family: georgia;
+	border-radius: 20px;
+	background-color: #d8f9ff;
+	padding-top:15px;
+	padding-bottom:15px;
+display: table;
+  margin-right: auto;
+  margin-left: auto;
+  letter-spacing:3px;
+}
+.items-list {
+box-shadow: -2px 1px 14px #e5e6e8;
+list-style-type: none;
+margin-left:0px;
+padding-left:0px;
+margin-bottom:15px;
+width:90%;
+}
+
+
+
+/*@media only screen and (min-width:1400px) {*/
+.items-list {
+height:330px;
+}
+
+.items-list img
+{
+float:left;
+ width:45%;
+ height:100%;
+ margin-right:7px;
+ object-fit: cover;
+border-right: 5px solid;
+border-image: linear-gradient(to bottom, #86DF7B 50%,#7BAADF 50%) 2;
+
+}
+.items-list .righttxt {
+ width:100%;
+padding: 10px;
+}
+
+
+.items-list .nametext {
+  color:#26b7a1;
+  font-size:80%;
+  padding-bottom:20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 21px;
+    max-height: 48px;
+
+}
+.items-list .pricetext {
+  color:#020202;
+  font-weight:bold;
+  padding-bottom:6px;
+  font-size:120%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+}
+.button{
+	background-color: #8B0000;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 7px;
+  cursor: pointer;
+  font-family: georgia;
+  font-weight: 900;
+}
+
+.button:hover {
+  background-color: #ff6242;
+}
+</style>
+<body>
+<h1>Available Cats</h1>
+<div class="banner">
+    <table>
+        <tr>
+            <th><a class="collapse-item" href="{% url 'index' %}">Home</a></th>
+            <th><a class="collapse-item" href="{% url 'cat_register' %}">Post Cat</a></th>
+
+        </tr>
+    </table>
+</div>
+
+
+<!--<table>
+    <tr>
+        <td>text above pic1</td>
+        <td>text above pic2</td>
+        <td>text above pic3</td>
+    </tr>
+    <tr>
+        <td><img src="willy1.jpg" alt="willy1" height="300" width="400"></td>
+        <td>pic2</td>
+        <td>pic3</td>
+    </tr>
+    <tr>
+        <td>text below pic1</td>
+        <td>text below pic2</td>
+        <td>text below pic3</td>
+    </tr>
+ </table>
+ -->
+
+
+</body>
+</html>

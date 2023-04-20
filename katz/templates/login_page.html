@@ -1,0 +1,156 @@
+<!Doctype html>
+<html lang="en">
+ <head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width,initial-scale=1">
+ <meta name= "Author" content="Martay Williams">
+ <link rel="stylesheet" href="login_page.css">
+ <script defer src="login-page.js"></script>
+     
+  <div class="container">
+   {% include 'messages.html' %}
+  </div>
+
+ <title> Login Page </title>
+ <style>
+ body {
+  background-color:#e4d5b7;
+}
+
+.login {
+	display: flex;
+	box-sizing: border-box;
+  width: 15%;
+  text-align: center;
+  border-radius: 20px;
+  background-color: #fff0db;
+  padding: 5px;
+  font-family: georgia;
+  font-weight: 900;
+  padding-left: 20px;
+  padding-top: 20px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+input[type=text],select, textarea {
+  width: 100%;
+  padding: 6px;
+  border: 1px solid #ccc; /* Gray border */
+  border-radius: 4px;
+  box-sizing: border-box; /* Make sure that padding and width stays in place */
+  margin-top: 6px;
+  margin-bottom: 16px;
+}
+
+input[type=password],select, textarea {
+  width: 100%;
+  padding: 6px;
+  border: 1px solid #ccc; /* Gray border */
+  border-radius: 4px;
+  box-sizing: border-box; /* Make sure that padding and width stays in place */
+  margin-top: 6px;
+  margin-bottom: 16px;
+
+}
+
+input[type=submit] {
+  background-color: #8B0000;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 7px;
+  cursor: pointer;
+  font-family: georgia;
+  font-weight: 900;
+}
+
+
+input[type=submit]:hover {
+  background-color: #ff6242;
+
+}
+
+h1 {
+    color:#65350f;
+	vertical-align: middle;
+	width: 50%;
+	text-align: center;
+	font-family: georgia;
+	/* border-radius: 20px;
+	background-color: #fff0db;
+	padding-top:15px;
+	padding-bottom:15px;*/
+display: table;
+  margin-right: auto;
+  margin-left: auto;
+  letter-spacing:3px;
+}
+
+h2 {
+	vertical-align: middle;
+	width: 15%;
+	text-align: center;
+	font-family: georgia;
+	border-radius: 20px;
+	background-color: #fff0db;
+	padding-top:15px;
+	padding-bottom:15px;
+  margin-right: auto;
+  margin-left: auto;
+  letter-spacing:3px;
+}
+hr {
+  width: 50%;
+}
+.create {
+width:50%;
+  color: #65350f;
+  font-weight: bold;
+  text-align: center;
+  font-family: georgia;
+  text-decoration: none;
+  font-size: 30px;
+  line-height: 25px;
+  border-radius: 4px;
+
+}
+.create:hover {
+  color: #ff6242;
+  font-weight: bold;
+  text-align: center;
+  font-family: georgia;
+  text-decoration: none;
+  font-size: 30px;
+  line-height: 25px;
+  border-radius: 4px;
+}
+
+
+ </style>
+ </head>
+ <body>
+ <h1>PLEASE LOGIN</h1>
+ <hr style="height:10px;border-width:0;color:#65350f;background-color:#65350f"><BR><br>
+ <div class="login">
+ 
+ <form name="login" action="" method="post">{% csrf_token %}
+ <label for="uname">Username:<br></label> 
+	<input type="text" id="uname" name="uname" required><br>
+	
+	 <label for="pass">Password:<br></label>
+		<input type="password" id="pass" name="pw" required><br><br>
+ 
+ <input type= "submit" value="Submit"> 
+ 
+ </form>
+ </div><br><br>
+ <hr style="height:10px;border-width:0;color:gray;background-color:#65350f">
+ <h2><a class="create" href="{% url 'register' %}">Create Account</a></h2>
+
+ 
+ 
+ 
+ 
+ </body>
+ </html>

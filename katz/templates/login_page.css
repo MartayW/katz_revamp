@@ -1,0 +1,72 @@
+body {
+  background-color:#3792cb;
+}
+
+.login {
+	display: flex;
+	box-sizing: border-box;
+  width: 15%;
+  text-align: center;
+  border-radius: 20px;
+  background-color: #d8f9ff;
+  padding: 5px;
+  font-family: georgia;
+  font-weight: 900;
+  padding-left: 20px;
+  padding-top: 20px;
+
+  margin-right: auto;
+  margin-left: auto;
+}
+
+input[type=text],select, textarea {
+  width: 100%; 
+  padding: 6px; 
+  border: 1px solid #ccc; /* Gray border */
+  border-radius: 4px; 
+  box-sizing: border-box; /* Make sure that padding and width stays in place */
+  margin-top: 6px;
+  margin-bottom: 16px; 
+}
+
+input[type=password],select, textarea {
+  width: 100%; 
+  padding: 6px; 
+  border: 1px solid #ccc; /* Gray border */
+  border-radius: 4px; 
+  box-sizing: border-box; /* Make sure that padding and width stays in place */
+  margin-top: 6px;
+  margin-bottom: 16px; 
+}
+
+input[type=submit] {
+  background-color: #8B0000;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 7px;
+  cursor: pointer;
+  font-family: georgia;
+  font-weight: 900;
+}
+
+
+input[type=submit]:hover {
+  background-color: #ff6242;
+  
+}
+
+h1 {
+	vertical-align: middle;
+	width: 50%;
+	text-align: center;
+	font-family: georgia;
+	border-radius: 20px;
+	background-color: #d8f9ff;
+	padding-top:15px;
+	padding-bottom:15px;
+display: table;
+  margin-right: auto;
+  margin-left: auto;
+  letter-spacing:3px;
+}

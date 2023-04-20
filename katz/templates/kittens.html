@@ -1,0 +1,489 @@
+<!Doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name= "Author" content="Martay Williams">
+    <link rel="stylesheet" href="kittens.css">
+
+
+    <!--Load the static variable that refers to the images folder-->
+    {% load static %}
+
+
+    <title> Kittens </title>
+</head>
+<style>
+    body {
+  background-color:#d9b99b;
+}
+.banner {
+width:50%;
+background-color:#fff0db;
+padding-top:15px;
+	padding-bottom:15px;
+	border-radius: 20px;
+
+}
+
+
+th {
+float:right;
+	font-family: georgia;
+	font-size:23px;
+	padding-top: 10px;
+	padding-bottom: 20px;
+	padding-left: 50px;
+	padding-right: 50px;
+	color:#FFFFFF;
+	background-color: #65350f;
+	width: 100%;
+     border-style: inset;
+	box-shadow: 5px 5px 10px #4A2511;
+  border-radius: 15px;
+  box-sizing: border-box;
+  letter-spacing: 3px;
+}
+
+.home{
+color:#FFFFFF;
+}
+
+.home:hover {
+  color: #fffda0;
+}
+.homeB {
+float:left;
+color:#FFFFFF;
+font-family: georgia;
+	text-align: center;
+	font-size:15px;
+	background-color: #65350f;
+	width: 10%;
+     border-style: inset;
+  border-radius: 15px;
+  box-sizing: border-box;
+   box-shadow: 5px 5px 10px #4A2511;
+  letter-spacing: 3px;
+}
+
+.homeBref{
+color:#FFFFFF;
+}
+        .homeBref:hover{
+            color: #fffda0;
+            }
+
+.post {
+float:right;
+color:#FFFFFF;
+font-family: georgia;
+	text-align: center;
+	font-size:15px;
+	background-color: #65350f;
+	width: 10%;
+     border-style: inset;
+  border-radius: 15px;
+  box-sizing: border-box;
+   box-shadow: 5px 5px 10px #4A2511;
+  letter-spacing: 3px;
+}
+.postref{
+color:#FFFFFF;
+}
+        .postref:hover{
+            color: #fffda0;
+            }
+
+
+h1 {
+	vertical-align: middle;
+	width: 40%;
+	text-align: center;
+	font-family: georgia;
+	border-radius: 20px;
+	color:#FFFFFF;
+	background-color: #65350f;
+	padding-top:5px;
+	padding-bottom:5px;
+	 box-shadow: 5px 5px 10px #4A2511;
+display: table;
+  margin-right: auto;
+  margin-left: auto;
+  letter-spacing:3px;
+  border-style: inset;
+}
+.items-list {
+ box-shadow: 5px 10px 20px #4A2511;
+list-style-type: none;
+margin-left:0px;
+padding-left:0px;
+margin-bottom:15px;
+width:95%;
+}
+
+
+
+/*@media only screen and (min-width:1400px) {*/
+.items-list {
+background-color: ;
+height:380px;
+}
+
+.items-list img
+{
+float:left;
+ width:45%;
+ height:100%;
+ margin-right:7px;
+ object-fit: cover;
+border-right: 5px solid;
+border-image: linear-gradient(to bottom, #86DF7B 50%,#7BAADF 50%) 2;
+
+}
+
+.items-list .infotext {
+ width:100%;
+ border: 2px solid #000000;
+ background-color: #ffffff;
+
+font-family: georgia;
+font-size:16px;
+}
+
+.items-list .righttxt {
+ width:100%;
+padding-bottom: 10px;
+padding-right: 10px;
+}
+
+
+.items-list .nametext {
+  color:#26b7a1;
+  font-size:80%;
+  padding-bottom:20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 21px;
+    max-height: 48px;
+
+}
+.items-list .pricetext {
+    width:10%;
+  color:#020202;
+  font-weight:bold;
+  padding-bottom:1px;
+  font-size:120%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+}
+.rsvtext {
+font-family: georgia;
+border: 1px solid #ccc;
+width:100%;
+padding-bottom: 0px;
+padding-right:-10px;
+border-style: inset;
+color:#FFFFFF;
+	background-color: #8B0000;
+}
+
+.button{
+
+	background-color: #8B0000;
+  color: white;
+  padding: 15px 20px;
+  border: none;
+  border-radius: 7px;
+  cursor: pointer;
+  font-family: georgia;
+  font-weight: 900;
+  top: -35px;
+  border-style: inset;
+}
+
+.button:hover {
+  background-color: #ff6242;
+}
+
+.button2{
+	background-color: #20124d;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 7px;
+  cursor: pointer;
+  font-family: georgia;
+  font-weight: 900;
+
+    border-style: inset;
+}
+.button2c{
+	background-color: #20124d;
+  color: white;
+  padding: 12px 40px;
+  border: none;
+  border-radius: 7px;
+  cursor: pointer;
+  font-family: georgia;
+  font-weight: 900;
+  position: relative;
+  top: -50px;
+  float: right;
+  border-style: inset;
+}
+
+.button2:hover {
+  background-color: #916fff;
+}
+
+.button2c:hover {
+  background-color: #916fff;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  transition: opacity 500ms;
+  visibility: hidden;
+  opacity: 0;
+}
+.overlay:target {
+  visibility: visible;
+  opacity: 1;
+}
+
+.popup {
+  margin: 70px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 5px;
+  width: 30%;
+  position: relative;
+  transition: all 5s ease-in-out;
+}
+
+.popup h2 {
+  margin-top: 0;
+  color: #333;
+  font-family: Tahoma, Arial, sans-serif;
+}
+.popup .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  transition: all 200ms;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+}
+.popup .close:hover {
+  color: #06D85F;
+}
+.popup .content {
+  max-height: 30%;
+  overflow: auto;
+}
+
+@media screen and (max-width: 700px){
+  .box{
+    width: 70%;
+  }
+  .popup{
+    width: 70%;
+  }
+}
+</style>
+<body>
+<br>
+<h1>Avaliable Cats</h1>
+{% if user.role == 'breeder' %}
+<div class="homeB"><h2><a class="homeBref" href="{% url 'index' %}">Home</a></th></h2></div>
+
+<div class="post"><h2><a class="postref" href="{% url 'cat_register' %}">Post Cat</a></h2></div>
+
+<br><br><br><br><br><br>
+<ul>
+
+
+    {% for cats in cats %}
+    <!-- this a FOR loop that automatically goes through all the cats in the CatTest table in the database
+    I basically set it up so that we have a working template for any newly registered cat-->
+    {% if cats.status != 'Purchased' %}
+    <li class="items-list">
+
+        <img src="{{cats.image.url}}" alt="{{cats.name}}" width="200" height="auto" />
+        <!-- the {{cats.image.url is supposed to render the image from the database. Don't know why it's not-->
+
+
+        <div class="righttxt">
+            <div class="nametext">
+                <h1>{{cats.name}}</h1>
+            </div>
+            <div class="pricetext">
+                <h2>${{cats.price}}</h2>
+            </div>
+            <div class="infotext">
+                <h3>{{cats.name}} is a {{cats.color}} {{cats.gender}} with a {{cats.personality}} personality.<br>
+                    This kitty's birthdate is {{cats.birthday}}, so currently {{cats.age}}
+                    <br> Uploaded By {{cats.owner}}</h3>
+
+                <div class="box">
+                    <a class="button2" href="#{{cats.id}}">Pedigree</a>
+                </div>
+
+
+
+                <div id="{{cats.id}}" class="overlay">
+                    <div class="popup">
+                        <a class="close" href="#">&times;</a>
+                        <div class="content">
+                            <br>
+                            <div style = "Text-align:center" >
+                                <u><b>Parents</b></u>
+                                <br>
+                            </div>
+                            <div style = "Text-align:left;float:left;position:absolute;left:100px" >
+                                <b>Father:</b> {{cats.father}}
+                            </div>
+                            <div style = "Text-align:right;float:right;position:absolute;right:100px" >
+                                <b>Mother:</b> {{cats.mother}}
+                            </div>
+                            <br>
+                            <hr size="8" width="90%" color="red">
+                            <div style = "Text-align:center" >
+                                <u><b>{{cats.name}}</b></u> </div>
+                            <br>
+                        </div>
+                    </div>
+                    {% else %}
+                    {% endif %}
+                </div> <br><br>
+                {% endfor %}
+            </div>
+    </li>
+
+
+</ul>
+{% else %} <!------------------CUSTOMER VIEW-------------------------------------------------->
+    <table>
+        <tr>
+            <th><a class="home" href="{% url 'index' %}">Home</a></th>
+
+
+        </tr>
+    </table> <br> <br> <br>
+
+
+<ul>
+
+    {% for cats in cats %}
+    <!-- this a FOR loop that automatically goes through all the cats in the CatTest table in the database
+    I basically set it up so that we have a working template for any newly registered cat-->
+    {% if cats.status != 'Purchased' %}
+    <li class="items-list">
+
+        <img src="{{cats.image.url}}" alt="{{cats.name}}" width="200" height="auto" />
+
+
+
+        <div class="righttxt">
+            <div class="nametext">
+                <h1>{{cats.name}}</h1>
+            </div>
+            <div class="pricetext">
+                <h2>${{cats.price}}</h2>
+            </div>
+            <div class="infotext">
+                <h3>{{cats.name}} is a {{cats.color}} {{cats.gender}} with a {{cats.personality}} personality.<br>
+                    This kitty's birthdate is {{cats.birthday}}, so currently {{cats.age}}
+                    <br> Uploaded By {{cats.owner}}</h3>
+
+            </div>
+
+            {% if cats.status == 'Reserved' %}
+            <div class="rsvtext">
+            <p><b>RESERVED BY {{cats.buyer}}</b></p>
+            {% if request.user.username == cats.buyer %}
+            </div>
+            <form action="purchase_direct/{{ cats.id }}/{{ user.id }}" method="post">{% csrf_token %}
+                <button onclick="" class="button" type="submit">Final Purchase</button>
+            </form>
+            {% endif %}
+            {% else %}
+            <form action="purchase_direct/{{ cats.id }}/{{ user.id }}" method="post">{% csrf_token %}
+                <button onclick="" class="button" type="submit">Purchase</button>
+            </form>
+            <!--       <button id ="{{cats.id}}" onclick="" class="button">
+                       Purchase
+                   </button> -->
+            {% endif %}
+            <div class="box">
+                <a class="button2c" href="#{{cats.id}}">{{cats.name}} 's Pedigree</a>
+            </div>
+
+            <div id="{{cats.id}}" class="overlay">
+                <div class="popup">
+                    <a class="close" href="#">&times;</a>
+                    <div class="content">
+                        <br>
+                        <div style = "Text-align:center" >
+                            <u><b>Parents</b></u>
+                            <br>
+                        </div>
+                        <div style = "Text-align:left;float:left;position:absolute;left:100px" >
+                            <b>Father:</b> {{cats.father}}
+                        </div>
+                        <div style = "Text-align:right;float:right;position:absolute;right:100px" >
+                            <b>Mother:</b> {{cats.mother}}
+                        </div>
+                        <br>
+                        <hr size="8" width="90%" color="red">
+                        <div style = "Text-align:center" >
+                            <u><b>{{cats.name}}</b></u> </div>
+                        <br>
+                    </div>
+                </div>
+            </div><br><br>
+
+
+
+
+            {% else %}
+            {% endif %}
+
+            {% endfor %}
+        </div>
+    </li>
+
+
+</ul>
+{% endif %}
+<!--<table>
+    <tr>
+        <td>text above pic1</td>
+        <td>text above pic2</td>
+        <td>text above pic3</td>
+    </tr>
+    <tr>
+        <td><img src="willy1.jpg" alt="willy1" height="300" width="400"></td>
+        <td>pic2</td>
+        <td>pic3</td>
+    </tr>
+    <tr>
+        <td>text below pic1</td>
+        <td>text below pic2</td>
+        <td>text below pic3</td>
+    </tr>
+ </table>
+ -->
+
+
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!Doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name= "Author" content="Martay Williams">
+  
+
+
+    <!--Load the static variable that refers to the images folder-->
+    {% load static %}
+
+
+
+    <title> About </title>
+</head>
+<style>
+
+body {
+  background-color:#d9b99b;
+}
+h1 {
+    color:#FFFFFF;
+    width: 30%;
+	vertical-align: middle;
+	text-align: center;
+	font-family: georgia;
+	border-radius: 20px;
+	background-color: #652A0E;
+	padding-top:15px;
+	padding-bottom:15px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+h2 {
+    color:#652A0E;
+    border-style: inset;
+    width: 70%;
+	vertical-align: middle;
+	text-align: center;
+	font-family: georgia;
+	border-radius: 20px;
+	background-color: #FFFFFF;
+	padding-top:15px;
+	padding-bottom:15px;
+	margin-right: auto;
+	margin-left: auto;
+}
+.create {
+width:50%;
+  color: #FFFFFF;
+  font-weight: bold;
+  text-align: center;
+  font-family: georgia;
+  text-decoration: none;
+  font-size: 30px;
+  line-height: 25px;
+  border-radius: 4px;
+
+}
+.create:hover {
+  color: #fffda0;
+  font-weight: bold;
+  text-align: center;
+  font-family: georgia;
+  text-decoration: none;
+  font-size: 30px;
+  line-height: 25px;
+  border-radius: 4px;
+}
+</style>
+<body>
+<h1> About Us </h1> <br><br>
+<h2>KATZ is a website for buying and selling cats/kittens. <br><br>
+    We allow breeders to search and offer cats of specific breeds. <br><br>
+    Our goal is to provide our users with the best cat selling and breeding system. </h2><br>
+<h1><a class="create" href="{% url 'index' %}">Home</a></h1>
+</body>
+
+</html>

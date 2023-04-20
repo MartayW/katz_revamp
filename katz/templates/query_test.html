@@ -1,0 +1,176 @@
+<!Doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name= "Author" content="Martay Williams">
+
+
+    <!--Load the static variable that refers to the images folder-->
+    {% load static %}
+
+
+
+    <title>Financial Reports</title>
+</head>
+<style>
+
+body {
+  background-color:#d9b99b;
+}
+h1 {
+   color:#652A0E;
+    border-style: inset;
+    width: 30%;
+	vertical-align: middle;
+	text-align: center;
+	font-family: georgia;
+	border-radius: 20px;
+	background-color: #ffffff;
+	padding-top:15px;
+	padding-bottom:15px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+h2 {
+    color:#652A0E;
+    border-style: inset;
+    width: 70%;
+	vertical-align: middle;
+	text-align: center;
+	font-family: georgia;
+	border-radius: 20px;
+	background-color: #FFFFFF;
+	padding-top:15px;
+	padding-bottom:15px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+h3 {
+    width: 10%;
+	vertical-align: middle;
+	text-align: center;
+	font-family: georgia;
+	border-radius: 20px;
+	background-color: #d8f9ff;
+	padding-top:15px;
+	padding-bottom:15px;
+	float: left;
+	color:#FFFFFF;
+	background-color: #65350f;
+}
+
+.home{
+color:#FFFFFF;
+}
+
+.home:hover {
+  color: #fffda0;
+}
+.form-style-9{
+    text-align: center;
+    font-size: 20px;
+	max-width: 450px;
+	background: #FAFAFA;
+	padding: 30px;
+	margin: auto auto;
+	box-shadow: 1px 1px 25px rgba(0, 0, 0, 0.35);
+	border-radius: 10px;
+	border: 6px solid #305A72;
+}
+.form-style-9 ul{
+	padding:0;
+	margin:0;
+	list-style:none;
+}
+.form-style-9 ul li{
+	display: block;
+	margin-bottom: 10px;
+	min-height: 35px;
+}
+.form-style-9 ul li  .field-style{
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	padding: 8px;
+	outline: none;
+	border: 1px solid #B0CFE0;
+	-webkit-transition: all 0.30s ease-in-out;
+	-moz-transition: all 0.30s ease-in-out;
+	-ms-transition: all 0.30s ease-in-out;
+	-o-transition: all 0.30s ease-in-out;
+
+}.form-style-9 ul li  .field-style:focus{
+	box-shadow: 0 0 5px #B0CFE0;
+	border:1px solid #B0CFE0;
+}
+.form-style-9 ul li .field-split{
+	width: 49%;
+}
+.form-style-9 ul li .field-full{
+	width: 100%;
+}
+.form-style-9 ul li input.align-left{
+	float:left;
+}
+.form-style-9 ul li input.align-right{
+	float:right;
+}
+.form-style-9 ul li textarea{
+	width: 100%;
+	height: 100px;
+}
+.form-style-9 ul li input[type="button"],
+.form-style-9 ul li input[type="submit"] {
+	-moz-box-shadow: inset 0px 1px 0px 0px #3985B1;
+	-webkit-box-shadow: inset 0px 1px 0px 0px #3985B1;
+	box-shadow: inset 0px 1px 0px 0px #3985B1;
+	background-color: #216288;
+	border: 1px solid #17445E;
+	display: inline-block;
+	cursor: pointer;
+	color: #FFFFFF;
+	padding: 8px 18px;
+	text-decoration: none;
+	font: 26px Arial, Helvetica, sans-serif;
+}
+.form-style-9 ul li input[type="button"]:hover,
+.form-style-9 ul li input[type="submit"]:hover {
+	background: linear-gradient(to bottom, #2D77A2 5%, #337DA8 100%);
+	background-color: #28739E;
+}
+
+</style>
+<body>
+<h3><a class ="home" href="{% url 'index' %}">Home</a></h3>
+<br><h1>Financial Report for <br>{{request.user.cattery}}</h1> <br><br>
+
+    <form class="form-style-9" action="" method="post">{% csrf_token %}
+        <label for="catname">Search by cat name:<br></label>
+        <input type="text" id="catname" name="catname"><br><br>
+
+        <label for="custname">Search by customer's last name:<br></label>
+        <input type="text" id="custname" name="custname"><br><br>
+
+        <label for="monthyear">Search by month and year:<br></label>
+        <input type="month" id="monthyear" name="monthyear"> <br><br>
+
+        <input type= "submit" value="Submit">
+    </form>
+
+    {% block monthyear %}
+    {% if monthyear %}<div>{{ monthyear|safe }}</div>{% endif %}
+    {% endblock %}
+
+    {% block catname %}
+    {% if catname %}<div>{{ catname|safe }}</div>{% endif %}
+    {% endblock %}
+
+{% for each in transactions %}
+<h2>{{ each|safe }}</h2>
+{% endfor %}
+</body>
+
+</html>
